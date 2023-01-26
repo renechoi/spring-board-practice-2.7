@@ -1,0 +1,13 @@
+
+yaml 파일에서 다음과 같은 설정
+-> localhost:8080/h2-console 들어가서 데이터베이스 접근 가능
+
+spring:
+  datasource:
+
+    url: jdbc:h2:mem:testdb
+    username: sa
+    driver-class-name: org.h2.Driver
+
+  h2.console.enabled: true
+

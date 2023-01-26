@@ -1,0 +1,18 @@
+show DATABASES;
+
+CREATE DATABASE board;
+
+create User 'rene'@'localhost' IDENTIFIED BY 'itiswhatitis';
+
+SELECT `user` from `mysql`.user;
+show grants for 'rene'@'localhost';
+
+grant all on `board`.* to 'rene'@'localhost' with GRANT OPTION;
+
+FLUSH PRIVILEGES;
+
+insert article VALUE (1,'1','2022-11-11','1','2022-11-11','2022-11-11','2022-11-11','1')
+
+delete from article where id =1;
+
+

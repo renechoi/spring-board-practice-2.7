@@ -1,7 +1,6 @@
 package com.example.springboardpractice.repository;
 
 import com.example.springboardpractice.domain.ArticleComment;
-import com.example.springboardpractice.domain.QArticle;
 import com.example.springboardpractice.domain.QArticleComment;
 import com.querydsl.core.types.dsl.DateTimeExpression;
 import com.querydsl.core.types.dsl.StringExpression;
@@ -17,9 +16,8 @@ public interface ArticleCommentRepository extends
         QuerydslPredicateExecutor<ArticleComment>,
         QuerydslBinderCustomizer<QArticleComment> {
 
-
     @Override
-    default void customize(QuerydslBindings bindings, QArticleComment root){
+    default void customize(QuerydslBindings bindings, QArticleComment root) {
         bindings.excludeUnlistedProperties(true);
         bindings.including(root.content, root.createdAt, root.createdBy);
         bindings.bind(root.content).first(StringExpression::containsIgnoreCase);

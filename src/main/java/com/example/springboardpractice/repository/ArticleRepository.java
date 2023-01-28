@@ -18,6 +18,8 @@ public interface ArticleRepository extends
         QuerydslPredicateExecutor<Article>,
         QuerydslBinderCustomizer<QArticle> {
 
+    Page<Article> findByTitle(String title, Pageable pageable);
+
     @Override
     default void customize(QuerydslBindings bindings, QArticle root) {
         bindings.excludeUnlistedProperties(true);
